@@ -1,0 +1,388 @@
+html { overflow-y: scroll; }
+
+:root{
+  /* Background */
+  --bg1: #F3EFE7;
+  --bg2: #E8E2D6;
+
+  /* Text */
+  --text: #2C2C2C;
+  --muted: rgba(0, 0, 0, 0.60);
+
+  /* Cards */
+  --card: rgba(255, 255, 255, 0.98);
+  --cardText: #111827;
+
+  /* Lines/borders */
+  --line: rgba(0,0,0,0.08);
+  --border: rgba(0, 0, 0, 0.12);
+
+  /* Buttons / accents */
+  --primary: #a92234;
+  --primaryHover: #4F6FC7;
+
+  --secondary: rgba(0, 0, 0, 0.05);
+  --secondaryHover: rgba(0, 0, 0, 0.10);
+
+  --accent: #98ADE7;
+}
+
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* FIX: use bg1/bg2 instead of undefined --bg */
+  background:
+    radial-gradient(1200px 600px at 20% 0%, #efd5dd 0%, transparent 60%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
+
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Layout */
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.section{
+  margin-top: 40px;
+}
+
+.section-title{
+  margin: 0 0 16px;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+
+/* Header */
+.site-header {
+  width: 100%;
+  border-bottom: 1px solid #000000;
+  background: #ffffff;
+}
+
+.header-inner {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 20px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 150px;
+}
+
+.logo { position: static; }
+
+.logo img {
+  height: 120px;
+  width: auto;
+  display: block;
+}
+
+.nav {
+  position: static;
+  transform: none;
+  display: flex;
+  gap: 90px;
+  font-size: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Language switch */
+.lang-switch {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.lang-switch a {
+  text-decoration: none;
+  opacity: 0.7;
+  color: black;
+}
+
+.lang-switch a.active {
+  opacity: 1;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Base card */
+.card {
+  border-radius: 18px;
+  padding: 28px;
+  margin: 16px 0;
+}
+
+/* HERO */
+.hero{
+  padding: 36px;
+  border-radius: 18px;
+
+  /* keep your warm hero */
+  background: rgba(255, 255, 255, 0.75);
+
+  border: 1px solid var(--line);
+  box-shadow: 0 16px 50px rgba(0,0,0,0.20);
+}
+
+.hero h1{
+  margin: 0 0 6px;
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+.hero h2{
+  margin: 0 0 18px;
+  font-size: 22px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.hero-subtitle{
+  max-width: 800ch;
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.hero-buttons{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* White cards (events + join) */
+.event-card, .join{
+  background: var(--card);
+  color: var(--cardText);
+  border: 1px solid rgba(17,24,39,0.08);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+}
+
+.event-card h3{
+  margin: 0 0 10px;
+  font-size: 24px;
+}
+
+.event-card p{
+  margin: 8px 0;
+  line-height: 1.55;
+}
+
+/* Features */
+.features{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.feature-box{
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(38, 38, 218, 0.25);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.feature-box h3{
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.feature-box p{
+  margin: 0;
+  color: var(--muted); 
+  line-height: 1.6;
+}
+
+/* Events grid */
+.events-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+/* Buttons (NEW system) */
+.btn{
+  display: inline-block;
+  padding: 11px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.18s ease;
+}
+
+.btn.primary{
+  background: var(--primary);
+  color: white;
+}
+
+.btn.primary:hover{
+  background: var(--primaryHover);
+  transform: translateY(-1px);
+}
+
+.btn.secondary{
+  background: var(--secondary);
+  color: var(--text);
+  border: 1px solid rgba(0,0,0,0.12);
+}
+
+.btn.secondary:hover{
+  background: var(--secondaryHover);
+  transform: translateY(-1px);
+}
+
+/* Buttons (LEGACY .button class you used on <a>) */
+.button{
+  display: inline-block;
+  text-decoration: none;
+  background: var(--accent);
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.button:hover{
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+/* Why join list */
+.benefits{
+  margin: 14px 0 18px;
+  padding-left: 18px;
+}
+
+.benefits li{
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+/* Forms */
+label {
+  display: block;
+  margin: 12px 0;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.70);
+  color: var(--text);
+}
+
+/* Text helpers */
+.message { margin-top: 10px; color: var(--muted); }
+.hint { color: var(--muted); font-size: 13px; margin-top: 8px; }
+.muted { color: var(--muted); font-weight: 500; }
+
+/* Footer */
+.footer {
+  padding: 26px 0 34px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Headshots */
+.headshots {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(140px, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.headshot { margin: 0; text-align: center; }
+
+.headshot img {
+  width: 140px;
+  height: 140px;
+  border-radius: 999px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+}
+
+.headshot figcaption { font-weight: 700; }
+
+.contributors {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+/* Past conferences */
+.past-conferences {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-top: 1px solid #e5e5e5;
+}
+
+.past-conferences h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.conference-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.conference-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.conference-card:hover {
+  transform: translateY(-5px);
+}
+
+.conference-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.conference-content {
+  padding: 20px;
+  color: #333;
+}
+
+.conference-date {
+  font-size: 0.9rem;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .features{ grid-template-columns: 1fr; }
+  .events-grid{ grid-template-columns: 1fr; }
+  .hero h1{ font-size: 32px; }
+  .headshots { grid-template-columns: repeat(2, minmax(140px, 1fr)); }
+}

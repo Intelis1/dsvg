@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+<body>
+
+ <header class="site-header">
+  <div class="header-inner">
+    <div class="logo">
+      <img src="images/logo.png" alt="My logo">
+    </div>
+
+   <nav class="nav">
+      <a href="de_index.html">Startseite</a>
+      <a href="de_about.html">Über uns</a>
+      <a href="de_remerciements.html">Danksagungen</a>
+      <a href="de_contact.html">Kontakt</a>
+    <div class="lang-switch">
+  <a href="en_index.html" lang="en">EN</a>
+  <span>·</span>
+  <a href="fr_index.html" lang="fr">FR</a>
+  <span>·</span>
+  <a href="de_index.html" class="active" lang="de">DE</a>
+</div>
+    </nav>
+  </div>
+</header>
+ 
+<section>
+  <h2>Kontakt</h2>
+
+  <p>Sie erreichen uns über folgende Kanäle:</p>
+
+  <p>
+    <strong>E-Mail:</strong> dsvg@unige.ch
+    <span class="muted">(E-Mail-Adresse wird derzeit eingerichtet.)</span>
+  </p>
+
+  <p>
+    Folgen Sie uns auf Instagram:
+    <a href="https://www.instagram.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer">
+      @USERNAME
+    </a>
+    <span class="muted">(Instagram-Seite folgt in Kürze.)</span>
+  </p>
+</section>
+
+<p>
+  Alternativ können Sie uns direkt über das folgende Formular kontaktieren.
+  <span class="muted">(Dieses funktioniert bereits vollständig :D)</span>
+</p>
+
+<main class="container">
+      
+  <section id="contact" class="card">
+    <h2>Kontaktformular</h2>
+
+    <form id="contactForm" action="https://formspree.io/f/xjgeaywe" method="POST">
+
+      <label>
+        Name
+        <input type="text" name="name" placeholder="Ihr Name" required />
+      </label>
+
+      <label>
+        E-Mail
+        <input type="email" name="email" placeholder="ihre@email.com" required />
+      </label>
+
+      <label>
+        Nachricht
+        <textarea name="message" rows="4" placeholder="Ihre Nachricht..." required></textarea>
+      </label>
+
+      <button type="submit">Nachricht senden</button>
+      <p id="message" class="hint" aria-live="polite"></p>
+
+    </form>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

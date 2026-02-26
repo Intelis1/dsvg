@@ -386,3 +386,53 @@ textarea {
   .hero h1{ font-size: 32px; }
   .headshots { grid-template-columns: repeat(2, minmax(140px, 1fr)); }
 }
+/* Test fix mobile  */
+
+/* --- Header responsiveness (add at the end of your CSS) --- */
+
+/* Make sure nothing causes sideways scrolling */
+html, body { overflow-x: hidden; }
+
+@media (max-width: 900px){
+  .header-inner{
+    padding: 12px 14px;
+    gap: 12px;
+    justify-content: space-between;
+    flex-wrap: wrap; /* allow nav to go to next line */
+  }
+
+  .logo img{
+    height: 64px;  /* smaller logo on mobile */
+  }
+
+  .nav{
+    width: 100%;
+    gap: 12px;
+    font-size: 16px;
+    flex-wrap: wrap;          /* links wrap to next line */
+    justify-content: center;  /* center links */
+  }
+
+  .nav a{
+    padding: 8px 10px;        /* easier to tap */
+    border-radius: 10px;
+  }
+
+  .lang-switch{
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px;
+    font-size: 14px;
+  }
+}
+
+/* Extra-tight phones */
+@media (max-width: 420px){
+  .nav{
+    font-size: 14px;
+    gap: 8px;
+  }
+  .logo img{
+    height: 56px;
+  }
+}

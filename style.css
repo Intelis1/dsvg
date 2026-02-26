@@ -394,15 +394,27 @@ textarea {
 html, body { overflow-x: hidden; }
 
 @media (max-width: 900px){
+
+  /* Stack header elements vertically */
   .header-inner{
-    padding: 12px 14px;
-    gap: 12px;
-    justify-content: space-between;
-    flex-wrap: wrap; /* allow nav to go to next line */
+    padding: 14px 14px;
+    gap: 10px;
+    flex-direction: column;   /* stack logo + nav */
+    align-items: center;      /* center everything */
+    justify-content: center;
   }
 
+  /* Center logo container */
+  .logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Bigger centered logo ONLY on phone */
   .logo img{
-    height: 64px;  /* smaller logo on mobile */
+    height: 90px;   /* ← increase size (adjust 80–110px if you want) */
+    max-width: 80%;
   }
 
   .nav{
@@ -433,6 +445,6 @@ html, body { overflow-x: hidden; }
     gap: 8px;
   }
   .logo img{
-    height: 56px;
+    height: 75px;
   }
 }

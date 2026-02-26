@@ -75,7 +75,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: left;
-  gap: 150px;
+  /* Change this to modify space on the left side of header */
+  gap: 130px;
 }
 
 .logo { position: static; }

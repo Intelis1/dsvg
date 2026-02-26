@@ -402,7 +402,8 @@ html, body { overflow-x: hidden; }
   }
 
   .logo img{
-    height: 64px;  /* smaller logo on mobile */
+    height: 120px;  /* smaller logo on mobile */
+     justify-content: center;
   }
 
   .nav{

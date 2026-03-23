@@ -125,6 +125,8 @@ body {
   border-radius: 18px;
   padding: 28px;
   margin: 16px 0;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
 }
 
 /* HERO */
